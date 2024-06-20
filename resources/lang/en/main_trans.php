@@ -39,5 +39,6 @@ return [
     'Quizes'=>'Quizes',
     'employees'=>'employees',
     'List_employees' => 'List employees ',
+    'attendanceemployee'=>'employee attendance',
 
 ];

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAttendancesemployeeTable extends Migration
+class CreateAttendancesemployeesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAttendancesemployeeTable extends Migration
      */
     public function up()
     {
-        Schema::create('attendancesemployee', function (Blueprint $table) {
+        Schema::create('attendancesemployees', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employee_id')->constrained()->onDelete('cascade');
             $table->date('date');

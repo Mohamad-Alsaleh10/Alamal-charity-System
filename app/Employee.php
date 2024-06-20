@@ -10,7 +10,7 @@ class Employee extends Model
 {
     protected $fillable = ['name', 'email', 'mobile' ,'position' , 'address'];
 
-    public function attendancesemployee()
+    public function attendancesemployees()
     {
         return $this->hasMany(Attendancesemployee::class);
     }

@@ -41,4 +41,6 @@ return [
     'Quizes' => 'الاختبارات',
     'employees' => 'الموظفين',
     'List_employees' => 'قائمة الموظفين',
+    'attendanceemployee'=>'الحضور والغياب للموظفين ',
+
 ];
