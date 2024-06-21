@@ -28,7 +28,6 @@ class ParentsTableSeeder extends Seeder
             $my_parents->Job_Father = ['en' => 'programmer', 'ar' => 'مبرمج'];
             $my_parents->Nationality_Father_id = Nationalitie::all()->unique()->random()->id;
             $my_parents->Blood_Type_Father_id =Type_Blood::all()->unique()->random()->id;
-            $my_parents->Religion_Father_id = Religion::all()->unique()->random()->id;
             $my_parents->Address_Father ='حمص';
             $my_parents->Name_Mother = ['en' => 'SS', 'ar' => 'سس'];
             $my_parents->National_ID_Mother = '1234567810';
@@ -37,7 +36,6 @@ class ParentsTableSeeder extends Seeder
             $my_parents->Job_Mother = ['en' => 'Teacher', 'ar' => 'معلمة'];
             $my_parents->Nationality_Mother_id = Nationalitie::all()->unique()->random()->id;
             $my_parents->Blood_Type_Mother_id =Type_Blood::all()->unique()->random()->id;
-            $my_parents->Religion_Mother_id = Religion::all()->unique()->random()->id;
             $my_parents->Address_Mother ='حمص';
             $my_parents->save();
 

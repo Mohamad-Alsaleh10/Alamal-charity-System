@@ -45,9 +45,6 @@
                                     <td>{{$schedule->start_time}}</td>
                                     <td>{{$schedule->end_time}}</td>
                                     <td>
-                                        <a href="{{route('schedule.edit',$schedule->id)}}"
-                                           class="btn btn-info btn-sm" role="button" aria-pressed="true"><i
-                                                class="fa fa-edit"></i></a>
                                         <form action="{{route('schedule.destroy',$schedule->id)}}" method="post"
                                               style="display: inline-block">
                                             {{ method_field('Delete') }}

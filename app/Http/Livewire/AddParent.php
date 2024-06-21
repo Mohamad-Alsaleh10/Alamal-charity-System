@@ -6,7 +6,6 @@ use App\Models\Grade;
 use App\Models\My_Parent;
 use App\Models\Nationalitie;
 use App\Models\ParentAttachment;
-use App\Models\Religion;
 use App\Models\Type_Blood;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
@@ -28,14 +27,14 @@ class AddParent extends Component
         $National_ID_Father, $Passport_ID_Father,
         $Phone_Father, $Job_Father, $Job_Father_en,
         $Nationality_Father_id, $Blood_Type_Father_id,
-        $Address_Father, $Religion_Father_id,
+        $Address_Father,
 
         // Mother_INPUTS
         $Name_Mother, $Name_Mother_en,
         $National_ID_Mother, $Passport_ID_Mother,
         $Phone_Mother, $Job_Mother, $Job_Mother_en,
         $Nationality_Mother_id, $Blood_Type_Mother_id,
-        $Address_Mother, $Religion_Mother_id;
+        $Address_Mother;
 
 
     public function updated($propertyName)
@@ -57,7 +56,6 @@ class AddParent extends Component
         return view('livewire.add-parent', [
             'Nationalities' => Nationalitie::all(),
             'Type_Bloods' => Type_Blood::all(),
-            'Religions' => Religion::all(),
             'my_parents' => My_Parent::all(),
         ]);
 
@@ -84,7 +82,6 @@ class AddParent extends Component
             'Phone_Father' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'Nationality_Father_id' => 'required',
             'Blood_Type_Father_id' => 'required',
-            'Religion_Father_id' => 'required',
             'Address_Father' => 'required',
         ]);
 
@@ -105,7 +102,6 @@ class AddParent extends Component
             'Job_Mother_en' => 'required',
             'Nationality_Mother_id' => 'required',
             'Blood_Type_Mother_id' => 'required',
-            'Religion_Mother_id' => 'required',
             'Address_Mother' => 'required',
         ]);
 
@@ -127,7 +123,6 @@ class AddParent extends Component
             $My_Parent->Passport_ID_Father = $this->Passport_ID_Father;
             $My_Parent->Nationality_Father_id = $this->Nationality_Father_id;
             $My_Parent->Blood_Type_Father_id = $this->Blood_Type_Father_id;
-            $My_Parent->Religion_Father_id = $this->Religion_Father_id;
             $My_Parent->Address_Father = $this->Address_Father;
 
             // Mother_INPUTS
@@ -139,7 +134,6 @@ class AddParent extends Component
             $My_Parent->Passport_ID_Mother = $this->Passport_ID_Mother;
             $My_Parent->Nationality_Mother_id = $this->Nationality_Mother_id;
             $My_Parent->Blood_Type_Mother_id = $this->Blood_Type_Mother_id;
-            $My_Parent->Religion_Mother_id = $this->Religion_Mother_id;
             $My_Parent->Address_Mother = $this->Address_Mother;
             $My_Parent->save();
 
@@ -182,7 +176,6 @@ class AddParent extends Component
         $this->Nationality_Father_id = $My_Parent->Nationality_Father_id;
         $this->Blood_Type_Father_id = $My_Parent->Blood_Type_Father_id;
         $this->Address_Father =$My_Parent->Address_Father;
-        $this->Religion_Father_id =$My_Parent->Religion_Father_id;
 
         $this->Name_Mother = $My_Parent->getTranslation('Name_Mother', 'ar');
         $this->Name_Mother_en = $My_Parent->getTranslation('Name_Father', 'en');
@@ -194,7 +187,6 @@ class AddParent extends Component
         $this->Nationality_Mother_id = $My_Parent->Nationality_Mother_id;
         $this->Blood_Type_Mother_id = $My_Parent->Blood_Type_Mother_id;
         $this->Address_Mother =$My_Parent->Address_Mother;
-        $this->Religion_Mother_id =$My_Parent->Religion_Mother_id;
     }
 
     //firstStepSubmit
@@ -248,7 +240,6 @@ class AddParent extends Component
         $this->Nationality_Father_id = '';
         $this->Blood_Type_Father_id = '';
         $this->Address_Father ='';
-        $this->Religion_Father_id ='';
 
         $this->Name_Mother = '';
         $this->Job_Mother = '';
@@ -260,7 +251,6 @@ class AddParent extends Component
         $this->Nationality_Mother_id = '';
         $this->Blood_Type_Mother_id = '';
         $this->Address_Mother ='';
-        $this->Religion_Mother_id ='';
 
     }
 

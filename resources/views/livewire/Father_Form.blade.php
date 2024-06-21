@@ -105,20 +105,7 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="form-group col">
-                        <label for="inputZip">{{trans('Parent_trans.Religion_Father_id')}}</label>
-                        <select class="custom-select my-1 mr-sm-2" wire:model="Religion_Father_id">
-                            <option selected>{{trans('Parent_trans.Choose')}}...</option>
-                            @foreach($Religions as $Religion)
-                                <option value="{{$Religion->id}}">{{$Religion->Name}}</option>
-                            @endforeach
-                        </select>
-                        @error('Religion_Father_id')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
                 </div>
-
 
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">{{trans('Parent_trans.Address_Father')}}</label>

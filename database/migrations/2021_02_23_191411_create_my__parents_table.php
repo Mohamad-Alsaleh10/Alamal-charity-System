@@ -26,7 +26,6 @@ class CreateMyParentsTable extends Migration
             $table->string('Job_Father');
             $table->bigInteger('Nationality_Father_id')->unsigned();
             $table->bigInteger('Blood_Type_Father_id')->unsigned();
-            $table->bigInteger('Religion_Father_id')->unsigned();
             $table->string('Address_Father');
 
             //Mother information
@@ -37,7 +36,6 @@ class CreateMyParentsTable extends Migration
             $table->string('Job_Mother');
             $table->bigInteger('Nationality_Mother_id')->unsigned();
             $table->bigInteger('Blood_Type_Mother_id')->unsigned();
-            $table->bigInteger('Religion_Mother_id')->unsigned();
             $table->string('Address_Mother');
             $table->timestamps();
 
