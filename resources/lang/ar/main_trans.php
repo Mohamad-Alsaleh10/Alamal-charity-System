@@ -43,5 +43,6 @@ return [
     'List_employees' => 'قائمة الموظفين',
     'attendanceemployee'=>'الحضور والغياب للموظفين ',
     'training'=>'تدريبات',
+    'schedule'=>'برنامج المواد',
 
 ];

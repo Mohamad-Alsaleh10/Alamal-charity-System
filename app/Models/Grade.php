@@ -21,4 +21,8 @@ class Grade extends Model
         return $this->hasMany('App\Models\Section', 'Grade_id');
     }
 
+    public function schedules()
+    {
+        return $this->hasMany('App\Models\Schedule');
+    }
 }

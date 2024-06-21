@@ -117,6 +117,8 @@ Route::group(
         Route::resource('training', 'TrainingController');
     });
 
+    Route::resource('schedule', ScheduleController::class);
+
 });
 
 

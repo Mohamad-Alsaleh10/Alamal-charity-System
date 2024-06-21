@@ -29,6 +29,9 @@ class Teacher extends  Authenticatable
     {
         return $this->belongsToMany('App\Models\Section','teacher_section');
     }
-
+    public function schedules()
+    {
+        return $this->hasMany('App\Models\Schedule');
+    }
 
 }

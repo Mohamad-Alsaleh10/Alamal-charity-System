@@ -32,6 +32,9 @@ class Subject extends Model
     {
         return $this->belongsTo('App\Models\Teacher', 'teacher_id');
     }
-
+    public function schedules()
+    {
+        return $this->hasMany('App\Schedule');
+    }
 
 }

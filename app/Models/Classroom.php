@@ -24,4 +24,9 @@ class Classroom extends Model
         return $this->belongsTo('App\Models\Grade', 'Grade_id');
     }
 
+    public function schedules()
+    {
+        return $this->hasMany('App\Models\Schedule');
+    }
+
 }

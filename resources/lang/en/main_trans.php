@@ -41,5 +41,7 @@ return [
     'List_employees' => 'List employees ',
     'attendanceemployee'=>'employee attendance',
     'training'=>'training',
+    'schedule'=>'schedule',
+
 
 ];
