@@ -124,6 +124,20 @@
             </ul>
         </li>
 
+
+        <!-- training-->
+        <li>
+            <a href="javascript:void(0);" data-toggle="collapse" data-target="#training-menu">
+                <div class="pull-left"><i class="fas fa-chalkboard-teacher"></i></i><span
+                        class="right-nav-text">{{trans('main_trans.training')}}</span></div>
+                <div class="pull-right"><i class="ti-plus"></i></div>
+                <div class="clearfix"></div>
+            </a>
+            <ul id="training-menu" class="collapse" data-parent="#sidebarnav">
+                <li> <a href="{{route('training.index')}}">{{trans('main_trans.training')}}</a> </li>
+            </ul>
+        </li>
+
         <!-- Parents-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Parents-menu">

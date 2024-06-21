@@ -114,6 +114,7 @@ Route::group(
     Route::group(['namespace' => 'Employee'], function () {
         Route::resource('employees', 'EmployeeController');
         Route::resource('attendance_employee', 'AttendanceController');
+        Route::resource('training', 'TrainingController');
     });
 
 });

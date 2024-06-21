@@ -12,13 +12,15 @@ class TrainingController extends Controller
     public function index()
     {
         $trainings = Training::with('participants')->get();
-        return view('trainings.index', compact('trainings'));
+        return view('pages.training.index', compact('trainings'));
+
+
     }
 
     public function create()
     {
         $employees = Employee::all();
-        return view('trainings.create', compact('employees'));
+        return view('pages.training.create', compact('employees'));
     }
 
     public function store(Request $request)
@@ -36,18 +38,18 @@ class TrainingController extends Controller
 
         $training->participants()->attach($request->participants);
 
-        return redirect()->route('trainings.index');
+        return redirect()->route('training.index');
     }
 
     public function show(Training $training)
     {
-        return view('trainings.show', compact('training'));
+        return view('pages.training.show', compact('training'));
     }
 
     public function edit(Training $training)
     {
         $employees = Employee::all();
-        return view('trainings.edit', compact('training', 'employees'));
+        return view('pages.training.edit', compact('training', 'employees'));
     }
 
     public function update(Request $request, Training $training)
@@ -64,12 +66,12 @@ class TrainingController extends Controller
         $training->update($request->all());
         $training->participants()->sync($request->participants);
 
-        return redirect()->route('trainings.index');
+        return redirect()->route('training.index');
     }
 
     public function destroy(Training $training)
     {
         $training->delete();
-        return redirect()->route('trainings.index');
+        return redirect()->route('training.index');
     }
 }
