@@ -28,6 +28,23 @@
 
         <section class="height-100vh d-flex align-items-center page-section-ptb login"
                  style="background-image: url('{{ asset('assets/images/sativa.png')}}');">
+
+            <div style="
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            left'FONT-WEIGHT: 500';
+            left'FONT-WEIGHT: 500';
+            left'FONT-WEIGHT: 500';
+            left'FONT-WEIGHT: 500';
+            left'FONT-WEIGHT: 500';
+            left'FONT-WEIGHT: 500';
+            transform: translateX(-50%);
+            text-align: center;
+        ">
+                <h3>جمعية جيل الأمل</h3>
+                <p>جمعية خيرية هدفها لمساعدة </p>
+            </div>
             <div class="container">
                 <div class="row justify-content-center no-gutters vertical-align">
 

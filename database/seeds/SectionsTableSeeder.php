@@ -22,7 +22,7 @@ class SectionsTableSeeder extends Seeder
             ['en' => 'Psychological Support', 'ar' => 'دعم نفسي'],
             ['en' => 'Speech and Language Therapy', 'ar' => ' نطق وتخاطب'],
             ['en' => 'Learning Difficulties' , 'ar' => 'صعوبات تعلم'],
-            ['en' => 'Inclusion of Children with Special Needs' , 'ar' => ' دمج الاطفال ذوي الاحتياجات الخاصة'],
+            ['en' => 'Inclusion of Children with Special Needs' , 'ar' => 'دمج الاطفال ذوي الاحتياجات الخاصة'],
 
         ];
 

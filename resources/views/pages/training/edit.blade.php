@@ -76,7 +76,7 @@
                                         <label for="participants">المشاركون</label>
                                         <select class="custom-select my-1 mr-sm-2" name="participants[]" multiple>
                                             @foreach($employees as $employee)
-                                                <option value="{{$employee->id}}" 
+                                                <option value="{{$employee->id}}"
                                                     {{ in_array($employee->id, $training->participants->pluck('id')->toArray()) ? 'selected' : '' }}>
                                                     {{$employee->name}}
                                                 </option>
