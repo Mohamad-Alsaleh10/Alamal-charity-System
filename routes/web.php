@@ -114,7 +114,11 @@ Route::group(
     Route::group(['namespace' => 'Employee'], function () {
         Route::resource('employees', 'EmployeeController');
         Route::resource('attendance_employee', 'AttendanceController');
+        Route::get('attendance_employee/{attendance}', [AttendanceController::class, 'show'])->name('attendance_employee.show');
+
         Route::resource('training', 'TrainingController');
+        Route::get('attendance_employee/search', [AttendanceController::class, 'search'])->name('attendance_employee.search');
+
     });
 
     Route::resource('schedule', ScheduleController::class);

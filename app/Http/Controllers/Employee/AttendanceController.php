@@ -8,10 +8,14 @@ use App\Http\Controllers\Controller;
 
 class AttendanceController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $employees = Employee::with('attendancesemployees')->get();
-        return view('pages.employees.Attendance.index', compact('employees'));
+        $date = $request->input('date', date('Y-m-d'));
+        $employees = Employee::with(['attendancesemployees' => function($query) use ($date) {
+            $query->where('date', $date);
+        }])->get();
+
+        return view('pages.employees.Attendance.index', compact('employees', 'date'));
     }
 
     public function store(Request $request)
@@ -29,41 +33,41 @@ class AttendanceController extends Controller
             );
         }
 
-        return redirect()->route('attendance_employee.index');
+        return redirect()->route('attendance_employee.index')->with('status', 'Attendance saved successfully!');
     }
 
-    public function create()
-    {
-        $employees = Employee::all();
-        return view('attendances.create', compact('employees'));
-    }
-
-    public function show(Attendancesemployee $attendance)
-    {
-        return view('attendances.show', compact('attendance'));
-    }
-
-    public function edit(Attendancesemployee $attendance)
-    {
-        $employees = Employee::all();
-        return view('attendances.edit', compact('attendance', 'employees'));
-    }
-
-    public function update(Request $request, Attendancesemployee $attendance)
+    public function search(Request $request)
     {
         $request->validate([
-            'employee_id' => 'required|exists:employees,id',
-            'date' => 'required|date',
-            'status' => 'required|in:present,absent',
+            'from' => 'required|date',
+            'to' => 'required|date',
+            'employee_id' => 'nullable|exists:employees,id'
         ]);
 
-        $attendance->update($request->all());
-        return redirect()->route('attendance_employee.index');
+        $from = $request->input('from');
+        $to = $request->input('to');
+        $employeeId = $request->input('employee_id');
+
+        $query = Attendancesemployee::with('employee')
+            ->whereBetween('date', [$from, $to]);
+
+        if ($employeeId != 0) {
+            $query->where('employee_id', $employeeId);
+        }
+
+        $attendances = $query->get();
+
+        return view('pages.employees.Attendance.search_results', compact('attendances', 'from', 'to', 'employeeId'));
     }
 
-    public function destroy(Attendancesemployee $attendance)
+    public function show($id)
     {
-        $attendance->delete();
-        return redirect()->route('attendance_employee.index');
+        $attendance = Attendancesemployee::with('employee')->find($id);
+
+        if (!$attendance || !$attendance->employee) {
+            return view('pages.employees.Attendance.show')->with('message', 'Attendance or Employee data is not available.');
+        }
+
+        return view('pages.employees.Attendance.show', compact('attendance'));
     }
 }

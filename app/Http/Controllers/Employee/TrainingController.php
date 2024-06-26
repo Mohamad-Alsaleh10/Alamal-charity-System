@@ -13,8 +13,6 @@ class TrainingController extends Controller
     {
         $trainings = Training::with('participants')->get();
         return view('pages.training.index', compact('trainings'));
-
-
     }
 
     public function create()
@@ -35,7 +33,6 @@ class TrainingController extends Controller
         ]);
 
         $training = Training::create($request->all());
-
         $training->participants()->attach($request->participants);
 
         return redirect()->route('training.index');
@@ -43,6 +40,7 @@ class TrainingController extends Controller
 
     public function show(Training $training)
     {
+        $training->load('participants');
         return view('pages.training.show', compact('training'));
     }
 

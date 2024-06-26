@@ -8,7 +8,7 @@
     <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>تطبيق ويب لإدارة جمعية الأمل</title>
+    <title>تطبيق ويب لإدارة جمعية جيل الأمل</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" />
@@ -43,11 +43,10 @@ login-->
         <div class="container">
             <div class="row justify-content-center no-gutters vertical-align">
                 <div class="col-lg-4 col-md-6 login-fancy-bg bg"
-                     style="background-image: url('{{ asset('assets/images/login-inner-bg.jpg')}}');">
+                     style="background-image: url('{{ asset('assets/images/login.jpg')}}');">
                     <div class="login-fancy">
                         <h2 class="text-white mb-20">مرحباَ بكم</h2>
-                        <p class="mb-20 text-white">Create tailor-cut websites with the exclusive multi-purpose
-                            responsive template along with powerful features.</p>
+                        <p class="mb-20 text-white">اهلا وسهلاً بكم في جيل الأمل</p>
                         <ul class="list-unstyled  pos-bot pb-30">
                             <li class="list-inline-item"><a class="text-white" href="#"> Terms of Use</a> </li>
                             <li class="list-inline-item"><a class="text-white" href="#"> Privacy Policy</a></li>

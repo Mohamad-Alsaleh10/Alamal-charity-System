@@ -8,7 +8,7 @@
     <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>تطبيق ويب لإدارة جمعية الأمل</title>
+    <title>تطبيق ويب لإدارة جمعية جيل الأمل</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" />
@@ -42,7 +42,7 @@
             transform: translateX(-50%);
             text-align: center;
         ">
-                <h3>جمعية جيل الأمل</h3>
+                <h3>جمعية جيل جيل الأمل</h3>
                 <p>جمعية خيرية هدفها لمساعدة </p>
             </div>
             <div class="container">
